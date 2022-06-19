@@ -9,9 +9,9 @@ defmodule CommunityWeb.Router do
     pipe_through :api
 
     forward "/graphiql", Absinthe.Plug.GraphiQL,
-    schema: CommunityWeb.Schema,
-    interface: :simple,
-    context: %{pubsub: CommunityWeb.Endpoint}
+      schema: CommunityWeb.Schema,
+      interface: :simple,
+      context: %{pubsub: CommunityWeb.Endpoint}
   end
 
   # Enables LiveDashboard only for development

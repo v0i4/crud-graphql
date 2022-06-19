@@ -35,7 +35,7 @@ defmodule Community.News do
       ** (Ecto.NoResultsError)
 
   """
-  def get_link(id), do: Repo.get(Link, id)
+  def get_link!(id), do: Repo.get(Link, id)
 
   @doc """
   Creates a link.

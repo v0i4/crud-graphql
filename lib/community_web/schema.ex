@@ -24,25 +24,25 @@ defmodule CommunityWeb.Schema do
   mutation do
     @desc "create a new link"
     field :create_link, :link do
-      arg :url, non_null(:string)
-      arg :description, non_null(:string)
+      arg(:url, non_null(:string))
+      arg(:description, non_null(:string))
 
-      resolve &NewsResolver.create_link/3
+      resolve(&NewsResolver.create_link/3)
     end
 
     @desc "update a link"
     field :update_link, type: :link do
-      arg :id, non_null(:id)
-      arg :post, :link_params
+      arg(:id, non_null(:id))
+      arg(:post, :link_params)
 
-      resolve &NewsResolver.update_link/3
+      resolve(&NewsResolver.update_link/3)
     end
 
     @desc "delete link"
     field :delete_link, type: :link do
-      arg :id, non_null(:id)
+      arg(:id, non_null(:id))
 
-      resolve &NewsResolver.delete_link/3
+      resolve(&NewsResolver.delete_link/3)
     end
   end
 end

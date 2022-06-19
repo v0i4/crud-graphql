@@ -50,7 +50,7 @@ defmodule Community.NewsTest do
     test "delete_link/1 deletes the link" do
       link = link_fixture()
       assert {:ok, %Link{}} = News.delete_link(link)
-      assert_raise Ecto.NoResultsError, fn -> News.get_link!(link.id) end
+      assert nil == News.get_link!(link.id)
     end
 
     test "change_link/1 returns a link changeset" do

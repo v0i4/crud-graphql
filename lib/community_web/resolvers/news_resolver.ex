@@ -17,7 +17,7 @@ defmodule CommunityWeb.NewsResolver do
   end
 
   def update_link(_, %{id: id, post: post}, _) do
-    case link = News.get_link(id) do
+    case link = News.get_link!(id) do
       %Link{} ->
         link |> News.update_link(post)
 
@@ -27,8 +27,7 @@ defmodule CommunityWeb.NewsResolver do
   end
 
   def delete_link(_, %{id: id}, _) do
-
-    case link = News.get_link(id) do
+    case link = News.get_link!(id) do
       %Link{} ->
         News.delete_link(link)
 
