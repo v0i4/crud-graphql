@@ -18,9 +18,8 @@ defmodule CommunityWeb.SchemaTest do
         "query" => @user_query
       })
 
-      assert json_response(conn, 200) == %{
-        "data" => %{"allLinks" => []}}
+    assert json_response(conn, 200) == %{
+             "data" => %{"allLinks" => []}
+           }
   end
-
-
 end
